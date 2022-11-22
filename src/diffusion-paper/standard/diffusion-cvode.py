@@ -291,7 +291,7 @@ def main():
 
     data = Data(problem)
     gt = GPTune(problem, computer=computer, data=data, historydb=historydb, options=options,driverabspath=os.path.abspath(__file__))
-    (data, modeler, stats) = gt.MLA(NS=NS, Igiven=giventask, NI=NI, NS1=NS1, T_sampleflag=[True]*NI)
+    (data, modeler, stats) = gt.MLA(NS=NS, NS1=NS1, NI=NI, Tgiven=giventask)
     print("stats: ", stats)
     """ Print all input and parameter samples """
     for tid in range(NI):
